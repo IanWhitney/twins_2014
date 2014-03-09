@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-md-3">
+    <% if ENV['allow_attendee_change'] %>
+      <%= form_for game, :remote => true do |f| %>
+        <%= f.select :attendee_id, game.attendee_options, {include_blank: true}, {:onchange=>'$(this.form).submit();' } %>
+      <% end %>
+    <% else %>
+      <%= game.attendee_name %>
+    <% end %>
+  </div>
+  <div class="col-md-3">
+    <%= game.opponent %>
+  </div>
+  <div class="col-md-2">
+    <%= game.day %>
+  </div>
+  <div class="col-md-1">
+    <%= game.time %>
+  </div>
+</div>
