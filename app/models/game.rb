@@ -3,6 +3,7 @@ class Game < ActiveRecord::Base
   default_scope { order(:date) }
 
   scope :unclaimed, -> { where(attendee_id: nil) }
+  scope :unplayed, -> { where('date >= ?', Date.today) }
 
   def attendee_options
     Attendee.all.collect {|a| [ a.name, a.id ] }
