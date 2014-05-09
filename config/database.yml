@@ -1,8 +1,11 @@
 development:
   adapter: postgresql
-  database: twins2014_development
+  database: <%= CONFIG['database'][:development][:database] %>
+  user: <%= CONFIG['database'][:development][:user] %>
+  host: <%= CONFIG['database'][:development][:host] %>
+  password: <%= CONFIG['database'][:development][:password] %>
   pool: 5
-  timeout: 5000
+  timeout: 5432
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
