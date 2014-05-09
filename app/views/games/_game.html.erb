@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" style='background-color:<%= cycle('#fff','rgba(168, 168, 168, 0.1')%>'>
   <div class="col-md-3">
     <% if ENV['allow_attendee_change'] %>
       <%= form_for game, :remote => true do |f| %>

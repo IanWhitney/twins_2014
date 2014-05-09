@@ -17,7 +17,7 @@ After getting the database setup, populate it with `rake setup:all`. That will f
 If developing locally, create an initializer file (I use `config/initializers/local.rb`) and give it this line:
 
 ```ruby
-ENV['secret_key_base'] = 'supersecretkey'
+ENV['SECRET_KEY_BASE'] = 'supersecretkey'
 ```
 
 And if you want to turn on the ability to assign attendees to games, add this line
