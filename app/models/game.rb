@@ -13,6 +13,10 @@ class Game < ActiveRecord::Base
     attendee ? attendee.name : NullAttendee.new.name
   end
 
+  def attendee_id
+    attendee ? attendee.id : NullAttendee.new.id
+  end
+
   def day
     date.strftime("%A, %B %e")
   end

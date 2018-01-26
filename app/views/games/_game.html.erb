@@ -5,7 +5,7 @@
         <%= f.select :attendee_id, game.attendee_options, {include_blank: true}, {:onchange=>'$(this.form).submit();' } %>
       <% end %>
     <% else %>
-      <%= game.attendee_name %>
+      <%= link_to game.attendee_name, attendee_path(game.attendee_id) %>
     <% end %>
   </div>
   <div class="col-md-3">
